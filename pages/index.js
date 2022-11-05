@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Script from "next/script";
 import AboutSection from "../components/sections/AboutSection";
 import HeroSection from "../components/sections/HeroSection";
 import RoadmapSection from "../components/sections/RoadmapSection";
@@ -20,6 +21,13 @@ export default function Home() {
 				<TeamSection />
 				<StreetSection />
 			</main>
+			<Script
+				id="video"
+				strategy="lazyOnload"
+				dangerouslySetInnerHTML={{
+					__html: `document.getElementById('vid')?.play();`,
+				}}
+			></Script>
 		</div>
 	);
 }

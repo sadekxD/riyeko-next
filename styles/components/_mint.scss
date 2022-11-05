@@ -1,0 +1,128 @@
+#mint {
+	padding: 180px 0 100px 0;
+	.container {
+		width: 560px;
+		box-shadow: 0px 0px 12px #ff00ff;
+		// filter: drop-shadow(0px 0px 12px #ff00ff);
+		border-radius: 16px;
+		padding: 30px;
+
+		.mint-info {
+			margin-top: 40px;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 30px;
+
+			.price,
+			.supply {
+				position: relative;
+				p {
+					display: flex;
+					justify-content: space-between;
+					z-index: 1;
+					font-family: $secondaryFont;
+					width: 70%;
+					margin: 0 auto;
+				}
+				svg {
+					z-index: -1;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					width: 100%;
+				}
+			}
+		}
+
+		.mint-counter {
+			width: 90%;
+			margin: 0 auto;
+			margin-top: 70px;
+			display: flex;
+			justify-content: space-around;
+
+			.dec,
+			.inc,
+			.counter {
+				position: relative;
+				z-index: 1;
+				.frame {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					z-index: -1;
+				}
+			}
+
+			.counter {
+				min-width: 150px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: #ff00ff;
+				font-size: 20px;
+
+				.frame {
+					width: 100%;
+				}
+			}
+		}
+
+		.mint-btn {
+			margin-top: 80px;
+			margin-bottom: 20px;
+			font-family: "Alfa Slab One", cursive;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $white;
+			position: relative;
+			width: 100%;
+			font-size: 32px;
+			.frame {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 100%;
+				z-index: -1;
+			}
+		}
+
+		@media screen and (max-width: 560px) {
+			.mint-info {
+				grid-template-columns: 1fr;
+				grid-gap: 40px;
+			}
+		}
+
+		@media screen and (max-width: 450px) {
+			.mint-counter {
+				width: 100%;
+				.dec,
+				.inc {
+					.frame {
+						width: 60px;
+					}
+				}
+
+				.counter {
+					.frame {
+						height: 60px;
+						width: 100px;
+					}
+				}
+			}
+
+			.mint-counter {
+				margin-top: 60px;
+			}
+
+			.mint-btn {
+				margin-top: 60px;
+			}
+		}
+	}
+}

@@ -64,12 +64,61 @@
 	.drawer {
 		display: none;
 		background-color: black !important;
-		position: relative;
 	}
 
 	@media screen and (max-width: 1080px) {
 		.drawer {
-			display: none;
+			display: block;
+			padding: 24px;
+
+			.drawer-top {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+
+				.social-links {
+					display: flex;
+					align-items: center;
+
+					a {
+						margin-right: 40px;
+						display: flex;
+						align-items: center;
+						cursor: pointer;
+					}
+				}
+
+				.drawer-close {
+					height: 24px;
+					width: 24px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					background-color: $white;
+					border-radius: 50%;
+				}
+			}
+
+			.nav-links {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				.item {
+					margin-top: 30px;
+					cursor: pointer;
+
+					&.street {
+						margin-bottom: -30px;
+						width: 100px;
+					}
+
+					&.active {
+						svg {
+							fill: $accent;
+						}
+					}
+				}
+			}
 		}
 
 		.container {

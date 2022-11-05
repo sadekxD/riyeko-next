@@ -124,8 +124,9 @@ const whitelist = () => {
 					>
 						<g filter="url(#filter0_bd_432_1361)">
 							<path
+								className="h-change"
 								d="M5 49.6667V1H417.983L463 25.991V74H50.0171L5 49.6667Z"
-								fill="#FFB800"
+								fill="none"
 							/>
 							<path
 								d="M5 49.6667V1H417.983L463 25.991V74H50.0171L5 49.6667Z"

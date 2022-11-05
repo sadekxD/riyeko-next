@@ -89,6 +89,14 @@
 				width: 100%;
 				z-index: -1;
 			}
+
+			&:hover {
+				.frame {
+					.h-change {
+						fill: $accent;
+					}
+				}
+			}
 		}
 
 		@media screen and (max-width: 560px) {

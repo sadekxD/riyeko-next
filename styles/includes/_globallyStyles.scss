@@ -1,0 +1,44 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: $primaryFont;
+	color: $white;
+	background-color: $black;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style-type: none;
+}
+
+button,
+input,
+select,
+textarea {
+	outline: none;
+	border: none;
+	background: none;
+	font-family: $primaryFont;
+}
+
+button,
+select {
+	cursor: pointer;
+}
+
+img,
+video {
+	user-select: none;
+	width: 100%;
+}

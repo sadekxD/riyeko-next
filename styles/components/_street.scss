@@ -25,6 +25,28 @@
 		}
 	}
 
+	.scroll-top {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 50px;
+
+		animation: float 2s infinite alternate;
+
+		@keyframes float {
+			0% {
+				transform: translateY(0);
+			}
+			100% {
+				transform: translateY(30px);
+			}
+		}
+
+		@media screen and (max-width: 500px) {
+			left: 85%;
+		}
+	}
+
 	@media screen and (max-width: 980px) {
 		.street-z-1 {
 			max-width: 450px;

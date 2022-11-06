@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Script from "next/script";
+import MusicPlayer from "../components/player/MusicPlayer";
 import AboutSection from "../components/sections/AboutSection";
 import HeroSection from "../components/sections/HeroSection";
 import RoadmapSection from "../components/sections/RoadmapSection";
@@ -21,6 +22,7 @@ export default function Home() {
 				<TeamSection />
 				<StreetSection />
 			</main>
+			<MusicPlayer />
 			<Script
 				id="video"
 				strategy="lazyOnload"

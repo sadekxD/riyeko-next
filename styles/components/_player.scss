@@ -1,0 +1,67 @@
+#player {
+	z-index: 99;
+	position: fixed;
+	left: 0;
+	bottom: 50px;
+	max-width: 250px;
+	width: 100%;
+	background-color: $white;
+	padding: 8px 16px;
+	border-radius: 0 12px 12px 0;
+	border: 1px solid $black;
+
+	img {
+		position: absolute;
+		width: 200px;
+		top: -1px;
+		transform: translateY(-100%);
+	}
+
+	.player-controls {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.prev,
+		.next {
+			display: flex;
+			cursor: pointer;
+		}
+
+		.prev {
+			margin-right: 10px;
+		}
+
+		.next {
+			margin-left: 10px;
+		}
+	}
+
+	.music-name {
+		font-size: 14px;
+		font-weight: 300;
+		color: $black;
+		text-align: center;
+	}
+
+	.play-pause {
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translate(50%, -50%);
+		height: 30px;
+		width: 30px;
+		border: 2px solid $black;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: $white;
+		cursor: pointer;
+	}
+
+	@media screen and (max-width: 500px) {
+		bottom: 0;
+	}
+}

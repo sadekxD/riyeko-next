@@ -73,7 +73,7 @@ const MusicPlayer = () => {
 	};
 
 	return (
-		<div id="player">
+		<div id="player" className={`${isPlaying ? "active" : ""}`}>
 			<audio
 				onTimeUpdate={timeUpdateHandler}
 				onLoadedMetadata={timeUpdateHandler}
@@ -82,7 +82,9 @@ const MusicPlayer = () => {
 				onEnded={songEndHandler}
 			></audio>
 			<img src="/images/player-img.png" alt="player" />
+
 			<p className="music-name">{currentSong?.name}</p>
+
 			<div className="player-controls">
 				<div className="prev" onClick={() => skipTrackHandler("skip-back")}>
 					<svg

@@ -55,7 +55,7 @@ const Header = () => {
 						<NLink
 							spy={true}
 							smooth={true}
-							offset={-96}
+							// offset={-96}
 							duration={500}
 							to="hero"
 							className="item"
@@ -115,7 +115,7 @@ const Header = () => {
 						<NLink
 							spy={true}
 							smooth={true}
-							offset={-96}
+							// offset={-96}
 							duration={500}
 							to="roadmap"
 							className="item"
@@ -258,7 +258,7 @@ const Header = () => {
 						<NLink
 							spy={true}
 							smooth={true}
-							offset={-96}
+							// offset={-96}
 							duration={500}
 							to="hero"
 							className="item"
@@ -285,7 +285,7 @@ const Header = () => {
 						<NLink
 							spy={true}
 							smooth={true}
-							offset={-96}
+							// offset={-96}
 							duration={500}
 							to="about"
 							className="item"
@@ -318,7 +318,7 @@ const Header = () => {
 						<NLink
 							spy={true}
 							smooth={true}
-							offset={-96}
+							// offset={-96}
 							duration={500}
 							to="roadmap"
 							className="item"

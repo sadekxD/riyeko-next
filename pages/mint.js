@@ -11,18 +11,26 @@ const mint = () => {
 					<Swiper
 						modules={[Autoplay, EffectCoverflow]}
 						effect="coverflow"
-						spaceBetween={40}
 						slidesPerView={3}
 						initialSlide={1}
+						// spaceBetween={40}
 						loop
+						breakpoints={{
+							0: {
+								spaceBetween: 20,
+							},
+							400: {
+								spaceBetween: 40,
+							},
+						}}
 						coverflowEffect={{
-							rotate: 0,
+							rotate:40,
 							stretch: 0,
 							depth: 100,
 							modifier: 1,
 							slideShadows: false,
 						}}
-						autoplay={{ delay: 1000, pauseOnMouseEnter: true }}
+						autoplay={{ delay: 500 }}
 					>
 						{[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, i) => (
 							<SwiperSlide key={i}>

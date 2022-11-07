@@ -82,7 +82,7 @@ const Header = () => {
 						<NLink
 							spy={true}
 							smooth={true}
-							offset={-96}
+							// offset={-96}
 							duration={500}
 							to="about"
 							className="item"

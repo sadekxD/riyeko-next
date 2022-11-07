@@ -1,11 +1,43 @@
 import React from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+import { Autoplay, EffectCoverflow } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const mint = () => {
 	return (
 		<section id="mint">
 			<div className="container">
-				<img src="/images/mint-img.png" alt="mint img" />
+				<div className="img-wrapper">
+					<Swiper
+						modules={[Autoplay, EffectCoverflow]}
+						effect="coverflow"
+						spaceBetween={40}
+						slidesPerView={3}
+						initialSlide={1}
+						loop
+						coverflowEffect={{
+							rotate: 0,
+							stretch: 0,
+							depth: 100,
+							modifier: 1,
+							slideShadows: false,
+						}}
+						autoplay={{ delay: 1000, pauseOnMouseEnter: true }}
+					>
+						{[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, i) => (
+							<SwiperSlide key={i}>
+								{({ isActive }) => (
+									<img
+										className={`img ${isActive ? "active" : ""}`}
+										src={`/images/mint-img.png`}
+										alt="product"
+									/>
+								)}
+							</SwiperSlide>
+						))}
+					</Swiper>
+				</div>
+
 				<div className="mint-info">
 					<div className="price">
 						<p>

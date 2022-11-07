@@ -6,7 +6,7 @@ const HeroSection = () => {
 	useEffect(() => {
 		// let elem = document.querySelector("#vid");
 		videoRef.current.onended = () => {
-			videoRef.current.currentTime = 23;
+			videoRef.current.currentTime = 24.1;
 			videoRef.current.play();
 		};
 	}, [videoRef]);

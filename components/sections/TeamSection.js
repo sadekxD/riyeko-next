@@ -1,10 +1,8 @@
 import React from "react";
 import { Autoplay, Navigation } from "swiper";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const TeamSection = () => {
-	const swiper = useSwiper();
-
 	return (
 		<section id="team">
 			<div className="container">
@@ -25,7 +23,7 @@ const TeamSection = () => {
 					}}
 					autoplay={{ delay: 2000, pauseOnMouseEnter: true }}
 				>
-					{[1, 2, 3, 1, 2, 3].map((item, i) => (
+					{[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, i) => (
 						<SwiperSlide key={i}>
 							<img
 								className="team-img"

@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
+const data = [{ title: "NFT PROJECT", description: "", image: "" }];
+
 const RoadmapSection = () => {
 	const [active, setActive] = useState(false);
 	const boxRef = useRef(null);

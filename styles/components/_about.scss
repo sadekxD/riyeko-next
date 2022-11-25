@@ -1,68 +1,60 @@
 #about {
-	padding: 176px 0 80px 0;
+	background: url(/images/about-bg.png) no-repeat;
+	background-position: center;
+	background-size: cover;
+	min-height: 800px;
+	height: 100vh;
+	// padding: 176px 0 80px 0;
 	display: flex;
-	justify-content: space-between;
-	position: relative;
-	min-height: 100vh;
-	// max-width: 1920px;
-	// margin: 0 auto;
+	align-items: center;
+	transition: all 0.3s;
 
-	.about-left {
-		max-width: 1020px;
-	}
+	.container {
+		display: flex;
+		justify-content: flex-end;
+		.slider-wrapper {
+			max-width: 430px;
+			width: 100%;
+			background: rgba(255, 255, 255, 0.7);
+			border: 1px solid #787878;
+			// backdrop-filter: blur(2px);
+			padding: 16px;
 
-	.about-right {
-		margin-left: 150px;
-		margin-right: 180px;
-		min-width: 400px;
-		.about-heading {
-			max-width: 550px;
-		}
+			.about-text {
+				font-family: $thirdFont;
+				font-size: 18px;
+				line-height: 1.5;
+				color: $black;
+				font-weight: 700;
+			}
 
-		.about-info {
-			max-width: 540px;
-			font-size: 32px;
-			// line-height: 134.22%;
-			font-weight: 300;
-		}
-	}
+			.slider-controls {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 10px;
 
-	.about-ww {
-		position: absolute;
-		right: 0;
-		bottom: 0;
-		max-width: 420px;
-		z-index: -1;
-	}
+				#next,
+				#prev {
+					width: 48px;
+					height: 12px;
+					border: 2px solid $accent3;
+					background-color: transparent;
+					border-radius: 2px;
+					cursor: pointer;
 
-	@media screen and (max-width: 1440px) {
-		flex-direction: column;
-
-		.about-left {
-			display: flex;
-			margin: 0 auto;
-		}
-
-		.about-right {
-			margin-top: 50px;
-		}
-	}
-
-	@media screen and (max-width: 980px) {
-		padding-top: 40px;
-		.about-right {
-			padding: 0 20px;
-			margin-left: auto;
-			margin-right: auto;
-			min-width: 100%;
-
-			.about-info {
-				font-size: 28px;
+					&.active {
+						background-color: $accent3;
+					}
+				}
 			}
 		}
+	}
 
-		.about-ww {
-			max-width: 250px;
+	@media screen and (max-width: 768px) {
+		background-position-x: -250px;
+		.container {
+			justify-content: center;
 		}
 	}
 }

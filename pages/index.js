@@ -1,13 +1,7 @@
 import Head from "next/head";
-import Script from "next/script";
-import MusicPlayer from "../components/player/MusicPlayer";
-import AboutSection from "../components/sections/AboutSection";
 import HeroSection from "../components/sections/HeroSection";
-import RoadmapSection from "../components/sections/RoadmapSection";
-import StreetSection from "../components/sections/StreetSection";
-import TeamSection from "../components/sections/TeamSection";
 
-export default function Home() {
+const Home = () => {
 	return (
 		<div>
 			<Head>
@@ -17,19 +11,10 @@ export default function Home() {
 			</Head>
 			<main>
 				<HeroSection />
-				<AboutSection />
-				<RoadmapSection />
-				<TeamSection />
-				<StreetSection />
 			</main>
-			<MusicPlayer />
-			<Script
-				id="video"
-				strategy="lazyOnload"
-				dangerouslySetInnerHTML={{
-					__html: `document.getElementById('vid')?.play();`,
-				}}
-			></Script>
 		</div>
 	);
-}
+};
+
+Home.commonHeader = true;
+export default Home;

@@ -26,20 +26,13 @@ class MyDocument extends Document {
 						crossOrigin="true"
 					/>
 					<link
-						href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Oswald:wght@500&family=Teko:wght@300;400;500;600;700&display=swap"
+						href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Oswald:wght@500&family=Courier+Prime&family=Teko:wght@300;400;500;600;700&display=swap"
 						rel="stylesheet"
 					/>
 				</Head>
 				<body>
 					<Main />
 					<NextScript />
-					{/* <Script
-						id="video"
-						strategy="lazyOnload"
-						dangerouslySetInnerHTML={{
-							__html: `document.getElementById('vid')?.play();`,
-						}}
-					></Script> */}
 				</body>
 			</Html>
 		);

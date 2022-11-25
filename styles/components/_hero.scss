@@ -1,10 +1,49 @@
 #hero {
-	padding-top: 120px;
+	background: url(/images/hero-bg.png) no-repeat;
+	background-size: cover;
+	background-position: center;
+	min-height: 800px;
+	height: 100vh;
+	position: relative;
+
 	.container {
-		width: 100%;
-		max-width: 100%;
-		video {
-			height: 80%;
+		.header {
+			padding: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			.logo {
+				max-width: 100px;
+				width: 100%;
+			}
+
+			.wl-btn {
+				width: 150px;
+				height: 50px;
+				background-color: $accent;
+				color: $black;
+				font-size: 24px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 5px;
+				// font-weight: 700;
+			}
 		}
+	}
+
+	.hero-cta {
+		position: absolute;
+		bottom: 100px;
+		left: 50%;
+		transform: translateX(-50%);
+		background-color: $accent2;
+		font-weight: 400;
+		font-size: 24px;
+		color: $white;
+		width: 118px;
+		height: 40px;
+		border-radius: 5px;
 	}
 }

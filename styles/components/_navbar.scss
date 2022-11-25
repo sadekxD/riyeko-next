@@ -12,23 +12,19 @@
 		.nav-left {
 			display: flex;
 			align-items: center;
-			.logo-text {
-				font-size: 64px;
-				font-weight: 300;
-				color: $white;
-				margin-right: 50px;
-				cursor: pointer;
-				.focus {
-					color: $accent;
-				}
+
+			.logo {
+				max-width: 100px;
+				width: 100%;
 			}
 
 			.social-links {
 				display: flex;
 				align-items: center;
+				margin-left: 100px;
 
 				a {
-					margin-right: 40px;
+					margin-right: 20px;
 					cursor: pointer;
 				}
 			}
@@ -40,17 +36,25 @@
 				align-items: center;
 				.item {
 					margin-left: 50px;
+					width: 50px;
+					height: 40px;
+					background-color: $black;
+					border: 2px solid $white;
 					cursor: pointer;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					border-radius: 4px;
 
 					&.street {
-						margin-bottom: -30px;
 						width: 100px;
+						img {
+							max-width: 62px;
+						}
 					}
 
 					&.active {
-						svg {
-							fill: $accent;
-						}
+						border-color: $accent2;
 					}
 				}
 			}
@@ -105,17 +109,25 @@
 				align-items: center;
 				.item {
 					margin-top: 30px;
+					width: 50px;
+					height: 40px;
+					background-color: $black;
+					border: 2px solid $white;
 					cursor: pointer;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					border-radius: 4px;
 
 					&.street {
-						margin-bottom: -30px;
 						width: 100px;
+						img {
+							max-width: 62px;
+						}
 					}
 
 					&.active {
-						svg {
-							fill: $accent;
-						}
+						border-color: $accent2;
 					}
 				}
 			}

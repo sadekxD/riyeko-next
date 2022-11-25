@@ -1,22 +1,19 @@
 import React, { useRef, useEffect } from "react";
+import Link from "next/link";
 
 const HeroSection = () => {
-	const videoRef = useRef(null);
-
-	useEffect(() => {
-		// let elem = document.querySelector("#vid");
-		videoRef.current.onended = () => {
-			videoRef.current.currentTime = 24.3;
-			videoRef.current.play();
-		};
-	}, [videoRef]);
-
 	return (
 		<section id="hero">
 			<div className="container">
-				<video ref={videoRef} autoPlay muted id="vid">
-					<source src="/videos/hero-video2.mp4" type="video/mp4" />
-				</video>
+				<div className="header">
+					<Link href="/">
+						<img src="/images/logo-main.png" alt="logo" className="logo" />
+					</Link>
+					<button className="wl-btn">PLAYER LIST(WL)</button>
+				</div>
+				<Link href="/about">
+					<button className="hero-cta">ENTER</button>
+				</Link>
 			</div>
 		</section>
 	);

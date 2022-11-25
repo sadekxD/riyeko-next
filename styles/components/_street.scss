@@ -1,111 +1,12 @@
 #street {
-	padding: 100px 0 0 0;
-	min-height: 100vh;
-	background-color: #cdcdcd;
-	position: relative;
+	min-height: 600px;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-	.street-z-1 {
-		position: absolute;
-		left: 80px;
-		top: -140px;
-		max-width: 576px;
-	}
-
-	.street-z-2 {
-		position: absolute;
-		right: 80px;
-		top: -140px;
-		max-width: 430px;
-	}
-
-	.container {
+	.street-img {
 		width: 100%;
-		.mobile {
-			display: none;
-		}
-	}
-
-	.scroll-top {
-		position: absolute;
-		left: 50%;
-		transform: translateX(-50%);
-		bottom: 50px;
-
-		animation: float 2s infinite alternate;
-
-		@keyframes float {
-			0% {
-				transform: translateY(0);
-			}
-			100% {
-				transform: translateY(30px);
-			}
-		}
-
-		@media screen and (max-width: 500px) {
-			left: 85%;
-		}
-	}
-
-	@media screen and (max-width: 980px) {
-		.street-z-1 {
-			max-width: 450px;
-		}
-
-		.street-z-2 {
-			max-width: 300px;
-		}
-
-		.container {
-			.pc {
-				display: none;
-			}
-
-			.mobile {
-				display: block;
-			}
-		}
-	}
-
-	@media screen and (max-width: 800px) {
-		.street-z-1 {
-			max-width: 350px;
-			left: 0;
-			top: -80px;
-		}
-
-		.street-z-2 {
-			max-width: 250px;
-			right: 0;
-			top: -80px;
-		}
-	}
-
-	@media screen and (max-width: 520px) {
-		.street-z-1 {
-			max-width: 250px;
-			left: 0;
-			top: -80px;
-		}
-
-		.street-z-2 {
-			max-width: 200px;
-			right: 0;
-			top: -80px;
-		}
-	}
-
-	@media screen and (max-width: 450px) {
-		.street-z-1 {
-			max-width: 200px;
-			left: 0;
-			top: -50px;
-		}
-
-		.street-z-2 {
-			max-width: 150px;
-			right: 0;
-			top: -40px;
-		}
+		max-width: 1020px;
 	}
 }

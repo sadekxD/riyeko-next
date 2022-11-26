@@ -1,18 +1,18 @@
 #roadmap {
 	position: relative;
-	min-height: 800px;
+	min-height: 600px;
 	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
+	background-color: #c40c0c;
 
 	.container {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		min-height: 800px;
 		max-width: 1440px;
 
 		.swiper {
@@ -96,6 +96,16 @@
 					// width: 60px;
 					background-color: $white;
 				}
+			}
+		}
+
+		@media screen and (max-width: 500px) {
+			.roadmap-card {
+				max-width: 350px;
+			}
+
+			.custom-pagination {
+				margin-top: -10px;
 			}
 		}
 	}

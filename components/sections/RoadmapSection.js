@@ -28,7 +28,7 @@ const RoadmapSection = () => {
 						type: "bullets",
 					}}
 					initialSlide={3}
-					// autoplay={{ delay: 2000, pauseOnMouseEnter: true }}
+					autoplay={{ delay: 2000, pauseOnMouseEnter: true }}
 				>
 					{[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, i) => (
 						<SwiperSlide key={i}>

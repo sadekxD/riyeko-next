@@ -7,36 +7,44 @@ const RoadmapSection = () => {
 	return (
 		<section id="roadmap">
 			<div className="container">
-				<Swiper
-					modules={[Autoplay, Navigation, Pagination]}
-					navigation={{ nextEl: "#next", prevEl: "#prev" }}
-					spaceBetween={40}
-					breakpoints={{
-						768: {
-							slidesPerView: 2,
-						},
-						980: {
-							slidesPerView: 2,
-						},
-						1200: {
-							slidesPerView: 3,
-						},
-					}}
-					pagination={{
-						el: ".custom-pagination",
-						clickable: true,
-						type: "bullets",
-					}}
-					initialSlide={3}
-					autoplay={{ delay: 2000, pauseOnMouseEnter: true }}
-				>
-					{[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, i) => (
-						<SwiperSlide key={i}>
-							<RoadmapCard />
-						</SwiperSlide>
-					))}
-				</Swiper>
+				<div className="swiper-wrapper">
+					<Swiper
+						modules={[Autoplay, Navigation, Pagination]}
+						navigation={{ nextEl: "#next", prevEl: "#prev" }}
+						spaceBetween={40}
+						breakpoints={{
+							768: {
+								slidesPerView: 2,
+							},
+							980: {
+								slidesPerView: 2,
+							},
+							1200: {
+								slidesPerView: 3,
+							},
+						}}
+						pagination={{
+							el: ".custom-pagination",
+							clickable: true,
+							type: "bullets",
+						}}
+						initialSlide={3}
+						autoplay={{ delay: 2000, pauseOnMouseEnter: true }}
+					>
+						{[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, i) => (
+							<SwiperSlide key={i}>
+								<RoadmapCard />
+							</SwiperSlide>
+						))}
+					</Swiper>
+				</div>
 				<div className="custom-pagination"></div>
+
+				<div className="roadmap-items">
+					{[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, i) => (
+						<RoadmapCard key={i} />
+					))}
+				</div>
 
 				{/* <RoadmapCard /> */}
 			</div>

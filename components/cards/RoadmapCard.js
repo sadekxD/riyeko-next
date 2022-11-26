@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDetectClickOutside } from "react-detect-click-outside";
 
 const RoadmapCard = () => {
 	const [active, setActive] = useState(false);
 	const toggle = () => setActive(!active);
+	const boxRef = useRef();
+	const [dim, setDim] = useState({ x: 0, y: 0 });
+
+	useEffect(() => {
+		setDim({ x: boxRef.current.clientWidth, y: boxRef.current.clientHeight });
+	}, [active]);
 
 	const ref = useDetectClickOutside({
 		onTriggered: () => {
@@ -11,8 +17,15 @@ const RoadmapCard = () => {
 		},
 	});
 
+	console.log(dim);
+
 	return (
-		<div className="roadmap-card" onClick={toggle} ref={ref}>
+		<div
+			className="roadmap-card"
+			onClick={toggle}
+			ref={ref}
+			style={{ height: dim.y }}
+		>
 			<div
 				className="card-inner"
 				style={{
@@ -25,8 +38,9 @@ const RoadmapCard = () => {
 				<div
 					className="card-back"
 					style={{
-						height: active ? "auto" : "fit-content",
+						height: !active ? "210px" : "fit-content",
 					}}
+					ref={boxRef}
 				>
 					<p>
 						Riyeko is a collection of 5,555 players chillin’ on the Ethereum

@@ -99,14 +99,54 @@
 			}
 		}
 
-		@media screen and (max-width: 500px) {
-			.roadmap-card {
-				max-width: 350px;
+		.roadmap-items {
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: 600px) {
+		overflow: auto;
+		padding: 100px 0;
+
+		.container {
+			width: 92%;
+			.swiper,
+			.custom-pagination {
+				display: none;
 			}
 
-			.custom-pagination {
-				margin-top: -10px;
+			.roadmap-items {
+				display: grid;
+				grid-gap: 20px;
+				width: 100%;
+				.roadmap-card {
+					max-width: 100%;
+					height: 210px;
+					transition: all 0.9s;
+					// overflow: hidden;
+
+					.card-front {
+						img {
+							height: 100%;
+							object-fit: cover;
+							border-radius: 16px;
+						}
+					}
+
+					.card-back {
+						transition: all 0.9s;
+						top: 0;
+					}
+				}
 			}
 		}
 	}
+
+	// @media screen and (max-width: 400px) {
+	// 	.container {
+	// 		.roadmap-items {
+	// 			grid-gap: 0;
+	// 		}
+	// 	}
+	// }
 }

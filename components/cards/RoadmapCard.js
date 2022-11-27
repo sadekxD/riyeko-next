@@ -27,7 +27,7 @@ const RoadmapCard = () => {
 		},
 	});
 
-	console.log(innerWidth);
+	console.log(dim, active);
 
 	if (innerWidth <= 600) {
 		return (
@@ -35,7 +35,9 @@ const RoadmapCard = () => {
 				className="roadmap-card"
 				onClick={toggle}
 				ref={ref}
-				style={{ height: dim.y }}
+				style={{
+					height: !active ? "210px" : "500px",
+				}}
 			>
 				<div
 					className="card-inner"
@@ -49,7 +51,7 @@ const RoadmapCard = () => {
 					<div
 						className="card-back"
 						style={{
-							height: !active ? "210px" : "fit-content",
+							height: !active ? "210px" : "500px",
 						}}
 						ref={boxRef}
 					>
@@ -85,7 +87,14 @@ const RoadmapCard = () => {
 		);
 	} else {
 		return (
-			<div className="roadmap-card" onClick={toggle} ref={ref}>
+			<div
+				className="roadmap-card"
+				onClick={toggle}
+				ref={ref}
+				// style={{
+				// 	height: !active ? "210px" : "500px",
+				// }}
+			>
 				<div
 					className="card-inner"
 					style={{
@@ -98,7 +107,7 @@ const RoadmapCard = () => {
 					<div
 						className="card-back"
 						style={{
-							height: !active ? "210px" : "fit-content",
+							height: !active ? "210px" : "500px",
 						}}
 						ref={boxRef}
 					>

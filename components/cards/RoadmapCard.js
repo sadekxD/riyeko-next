@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDetectClickOutside } from "react-detect-click-outside";
 
-const RoadmapCard = () => {
+const RoadmapCard = ({ title, image }) => {
 	const [active, setActive] = useState(false);
 	const toggle = () => setActive(!active);
 	const boxRef = useRef();
@@ -27,8 +27,6 @@ const RoadmapCard = () => {
 		},
 	});
 
-	console.log(dim, active);
-
 	if (innerWidth <= 600) {
 		return (
 			<div
@@ -45,8 +43,8 @@ const RoadmapCard = () => {
 						transform: active ? "rotateY(180deg)" : "rotateY(0deg)",
 					}}
 				>
-					<div className="card-front" data-title="NFT PROJECT">
-						<img src="/images/roadmap-1.png" alt="roadmap 1" />
+					<div className="card-front" data-title={title}>
+						<img src={image} alt={image} />
 					</div>
 					<div
 						className="card-back"
@@ -101,8 +99,8 @@ const RoadmapCard = () => {
 						transform: active ? "rotateY(180deg)" : "rotateY(0deg)",
 					}}
 				>
-					<div className="card-front" data-title="NFT PROJECT">
-						<img src="/images/roadmap-1.png" alt="roadmap 1" />
+					<div className="card-front" data-title={title}>
+						<img src={image} alt={image} />
 					</div>
 					<div
 						className="card-back"

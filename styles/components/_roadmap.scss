@@ -6,7 +6,7 @@
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
-	background-color: #c40c0c;
+	// background-color: $accent2;
 
 	.container {
 		display: flex;
@@ -60,6 +60,7 @@
 						font-size: 36px;
 						font-weight: 700;
 						white-space: nowrap;
+						text-transform: uppercase;
 					}
 				}
 

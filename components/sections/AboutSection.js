@@ -1,11 +1,36 @@
 import React, { useEffect, useState } from "react";
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const AboutSection = () => {
 	const [activeIndex, setActiveIndex] = useState(0);
 	return (
 		<section id="about">
+			<div className="about-bg-img">
+				<AnimatePresence>
+					{activeIndex === 0 && (
+						<motion.img
+							initial={{ filter: "blur(50px)" }}
+							animate={{ filter: "blur(0)" }}
+							transition={{ duration: 0.5 }}
+							src={`/images/about-bg-${activeIndex + 1}.png`}
+							alt={`about-bg-${activeIndex}`}
+						/>
+					)}
+				</AnimatePresence>
+				<AnimatePresence>
+					{activeIndex === 1 && (
+						<motion.img
+							initial={{ filter: "blur(50px)" }}
+							animate={{ filter: "blur(0)" }}
+							transition={{ duration: 0.5 }}
+							src={`/images/about-bg-${activeIndex + 1}.png`}
+							alt={`about-bg-${activeIndex}`}
+						/>
+					)}
+				</AnimatePresence>
+			</div>
 			<div className="container">
 				<div className="slider-wrapper">
 					<Swiper

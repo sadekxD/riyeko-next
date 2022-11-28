@@ -3,6 +3,27 @@ import RoadmapCard from "../cards/RoadmapCard";
 import { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+const data = [
+	{
+		title: "nft project",
+	},
+	{
+		title: "community",
+	},
+	{
+		title: "p2e game",
+	},
+	{
+		title: "metaverse",
+	},
+	{
+		title: "street",
+	},
+	{
+		title: "dao",
+	},
+];
+
 const RoadmapSection = () => {
 	return (
 		<section id="roadmap">
@@ -31,9 +52,12 @@ const RoadmapSection = () => {
 						initialSlide={3}
 						autoplay={{ delay: 2000, pauseOnMouseEnter: true }}
 					>
-						{[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, i) => (
-							<SwiperSlide key={i}>
-								<RoadmapCard />
+						{data.map((item, i) => (
+							<SwiperSlide key={item.title}>
+								<RoadmapCard
+									title={item.title}
+									image={`/images/roadmap-${i + 1}.png`}
+								/>
 							</SwiperSlide>
 						))}
 					</Swiper>
@@ -41,8 +65,12 @@ const RoadmapSection = () => {
 				<div className="custom-pagination"></div>
 
 				<div className="roadmap-items">
-					{[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, i) => (
-						<RoadmapCard key={i} />
+					{data.map((item, i) => (
+						<RoadmapCard
+							key={item.title}
+							title={item.title}
+							image={`/images/roadmap-${i + 1}.png`}
+						/>
 					))}
 				</div>
 

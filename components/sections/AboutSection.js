@@ -27,6 +27,7 @@ const AboutSection = () => {
 							transition={{ duration: 0.5 }}
 							src={`/images/about-bg-${activeIndex + 1}.png`}
 							alt={`about-bg-${activeIndex}`}
+							style={{ objectPosition: "center" }}
 						/>
 					)}
 				</AnimatePresence>

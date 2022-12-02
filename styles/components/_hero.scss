@@ -13,6 +13,7 @@
 		min-width: 100%;
 		min-height: 100%;
 		object-fit: cover;
+		object-position: left;
 		z-index: -1;
 	}
 
@@ -50,10 +51,10 @@
 		transform: translateX(-50%);
 		background-color: $accent2;
 		font-weight: 400;
-		font-size: 24px;
+		font-size: 36px;
 		color: $white;
-		width: 118px;
-		height: 40px;
+		width: 148px;
+		height: 60px;
 		border-radius: 5px;
 	}
 }

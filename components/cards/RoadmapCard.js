@@ -34,7 +34,11 @@ const RoadmapCard = ({ title, image, description }) => {
 				onClick={toggle}
 				ref={ref}
 				style={{
-					height: !active ? "210px" : title === "metaverse" ? "600px" : "500px",
+					height: !active
+						? "210px"
+						: title === "metaverse" || title === "nft project"
+						? "650px"
+						: "500px",
 				}}
 			>
 				<div
@@ -47,12 +51,14 @@ const RoadmapCard = ({ title, image, description }) => {
 						<img src={image} alt={image} />
 					</div>
 					<div
-						className="card-back"
+						className={`card-back ${
+							title.toLowerCase() === "dao" ? "dao" : ""
+						}`}
 						style={{
 							height: !active
 								? "210px"
-								: title === "metaverse"
-								? "600px"
+								: title === "metaverse" || title === "nft project"
+								? "650px"
 								: "500px",
 						}}
 						ref={boxRef}
@@ -68,6 +74,7 @@ const RoadmapCard = ({ title, image, description }) => {
 				className="roadmap-card"
 				onClick={toggle}
 				ref={ref}
+
 				// style={{
 				// 	height: !active ? "210px" : "500px",
 				// }}
@@ -82,7 +89,9 @@ const RoadmapCard = ({ title, image, description }) => {
 						<img src={image} alt={image} />
 					</div>
 					<div
-						className="card-back"
+						className={`card-back ${
+							title.toLowerCase() === "dao" ? "dao" : ""
+						}`}
 						style={{
 							height: !active
 								? "210px"

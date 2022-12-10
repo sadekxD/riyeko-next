@@ -58,6 +58,12 @@
 					transform: translate(-50%, -50%);
 					z-index: -1;
 				}
+
+				&:hover {
+					.c_btn {
+						fill: $white;
+					}
+				}
 			}
 
 			.counter {
@@ -85,6 +91,7 @@
 			position: relative;
 			width: 100%;
 			font-size: 32px;
+
 			.frame {
 				position: absolute;
 				top: 50%;

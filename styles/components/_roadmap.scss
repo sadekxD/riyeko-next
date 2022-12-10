@@ -74,6 +74,14 @@
 					font-family: $thirdFont;
 					transition: all 0.9s;
 					top: -50%;
+
+					&.dao {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						color: $accent2;
+						font-size: 36px;
+					}
 				}
 			}
 

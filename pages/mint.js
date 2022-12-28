@@ -37,18 +37,19 @@ const mint = () => {
 						coverflowEffect={{
 							rotate: 40,
 							stretch: 0,
-							depth: 100,
+							depth: 40,
 							modifier: 1,
 							slideShadows: false,
 						}}
 						autoplay={{ delay: 500 }}
 					>
-						{[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, i) => (
+						{[1, 2, 3, 4, 5, 6].map((item, i) => (
 							<SwiperSlide key={i}>
 								{({ isActive }) => (
 									<img
+										style={{ borderRadius: 10 }}
 										className={`img ${isActive ? "active" : ""}`}
-										src={`/images/mint-img.png`}
+										src={`/images/${item}.png`}
 										alt="product"
 									/>
 								)}

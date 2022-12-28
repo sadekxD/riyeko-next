@@ -1,9 +1,44 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
+import { ethers } from "ethers";
 
 const whitelist = () => {
+	const [formData, setFormData] = useState({
+		discord: "",
+		twitter: "",
+		wallet: "",
+	});
+
+	const _submit = async (e) => {
+		e.preventDefault();
+		try {
+			if (ethers.utils.isAddress(formData.wallet)) {
+				const res = await fetch(
+					"https://sheet.best/api/sheets/f867b061-7d5c-4c0d-8a81-d1643a0673fe",
+					{
+						method: "POST",
+						mode: "cors",
+						headers: {
+							"Content-Type": "application/json",
+						},
+						body: JSON.stringify(formData),
+					}
+				);
+
+				console.log(res);
+			}
+		} catch (err) {
+			console.log(err);
+		}
+	};
+
+	const _change = (e) => {
+		setFormData({ ...formData, [e.target.name]: e.target.value });
+	};
+
 	return (
 		<section id="whitelist">
-			<div className="container">
+			<form className="container" onSubmit={_submit}>
 				<h1 className="heading">
 					RIY<span className="focus">EKO</span>
 				</h1>
@@ -42,7 +77,13 @@ const whitelist = () => {
 						</p>
 					</div>
 					<div className="input-box">
-						<input type="text" placeholder="ENTER DISCORD ID" />
+						<input
+							required
+							type="text"
+							name="discord"
+							onChange={_change}
+							placeholder="ENTER DISCORD ID"
+						/>
 						<svg
 							width="460"
 							height="62"
@@ -84,7 +125,13 @@ const whitelist = () => {
 						</p>
 					</div>
 					<div className="input-box">
-						<input type="text" placeholder="ENTER TWITTER ID" />
+						<input
+							required
+							type="text"
+							name="twitter"
+							onChange={_change}
+							placeholder="ENTER TWITTER ID"
+						/>
 						<svg
 							width="460"
 							height="62"
@@ -134,7 +181,13 @@ const whitelist = () => {
 						</p>
 					</div>
 					<div className="input-box">
-						<input type="text" placeholder="ENTER WALLET ADDRESS" />
+						<input
+							required
+							type="text"
+							name="wallet"
+							onChange={_change}
+							placeholder="ENTER WALLET ADDRESS"
+						/>
 						<svg
 							width="460"
 							height="62"
@@ -153,7 +206,7 @@ const whitelist = () => {
 						</svg>
 					</div>
 				</div>
-				<button className="join-btn">
+				<button type="submit" className="join-btn">
 					JOIN US!
 					<svg
 						className="frame"
@@ -221,7 +274,7 @@ const whitelist = () => {
 						</defs>
 					</svg>
 				</button>
-			</div>
+			</form>
 		</section>
 	);
 };

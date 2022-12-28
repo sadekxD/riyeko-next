@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { Autoplay, EffectCoverflow } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import globalContext from "../context/GlobalContext";
 
 const mint = () => {
+	const {
+		connectWallet,
+		handleCount,
+		disconnect,
+		mint,
+		value,
+		connected,
+		mintInfo,
+	} = useContext(globalContext);
+
 	return (
 		<section id="mint">
 			<div className="container">
@@ -53,7 +64,12 @@ const mint = () => {
 								<i>PRICE</i>
 							</span>
 							<span>
-								<i>.45 ETH</i>
+								<i>
+									{mintInfo.preSale
+										? mintInfo.presaleCost
+										: mintInfo.publicCost}{" "}
+									ETH
+								</i>
 							</span>
 						</p>
 						<svg
@@ -78,7 +94,7 @@ const mint = () => {
 								<i>SUPPLY</i>
 							</span>
 							<span>
-								<i>230</i>
+								<i>{mintInfo.minted} / 5555</i>
 							</span>
 						</p>
 						<svg
@@ -99,7 +115,7 @@ const mint = () => {
 					</div>
 				</div>
 				<div className="mint-counter">
-					<button className="dec">
+					<button className="dec" onClick={() => handleCount("dec")}>
 						<AiOutlineMinus size={24} color="#FF00FF" />
 						<svg
 							className="frame"
@@ -164,7 +180,7 @@ const mint = () => {
 						</svg>
 					</button>
 					<p className="counter">
-						1
+						{value}
 						<svg
 							className="frame"
 							width="89"
@@ -227,7 +243,7 @@ const mint = () => {
 							</defs>
 						</svg>
 					</p>
-					<button className="inc">
+					<button className="inc" onClick={() => handleCount("inc")}>
 						<AiOutlinePlus size={24} color="#FF00FF" />
 						<svg
 							className="frame"
@@ -293,74 +309,150 @@ const mint = () => {
 					</button>
 				</div>
 
-				<button className="mint-btn">
-					MINT
-					<svg
-						className="frame"
-						width="468"
-						height="83"
-						viewBox="0 0 468 83"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
-						preserveAspectRatio="none"
-					>
-						<g filter="url(#filter0_bd_432_1239)">
-							<path
-								className="h-change"
-								d="M5 49.6667V1H417.983L463 25.991V74H50.0171L5 49.6667Z"
-								fill="none"
-							/>
-							<path
-								d="M5 49.6667V1H417.983L463 25.991V74H50.0171L5 49.6667Z"
-								stroke="#FFB800"
-								stroke-width="2"
-							/>
-						</g>
-						<defs>
-							<filter
-								id="filter0_bd_432_1239"
-								x="0"
-								y="-4"
+				{connected ? (
+					<React.Fragment>
+						<button className="mint-btn" onClick={mint}>
+							MINT
+							<svg
+								className="frame"
 								width="468"
-								height="87"
-								filterUnits="userSpaceOnUse"
-								colorInterpolationFilters="sRGB"
+								height="83"
+								viewBox="0 0 468 83"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+								preserveAspectRatio="none"
 							>
-								<feFlood flood-opacity="0" result="BackgroundImageFix" />
-								<feGaussianBlur in="BackgroundImageFix" stdDeviation="2" />
-								<feComposite
-									in2="SourceAlpha"
-									operator="in"
-									result="effect1_backgroundBlur_432_1239"
+								<g filter="url(#filter0_bd_432_1239)">
+									<path
+										className="h-change"
+										d="M5 49.6667V1H417.983L463 25.991V74H50.0171L5 49.6667Z"
+										fill="none"
+									/>
+									<path
+										d="M5 49.6667V1H417.983L463 25.991V74H50.0171L5 49.6667Z"
+										stroke="#FFB800"
+										stroke-width="2"
+									/>
+								</g>
+								<defs>
+									<filter
+										id="filter0_bd_432_1239"
+										x="0"
+										y="-4"
+										width="468"
+										height="87"
+										filterUnits="userSpaceOnUse"
+										colorInterpolationFilters="sRGB"
+									>
+										<feFlood flood-opacity="0" result="BackgroundImageFix" />
+										<feGaussianBlur in="BackgroundImageFix" stdDeviation="2" />
+										<feComposite
+											in2="SourceAlpha"
+											operator="in"
+											result="effect1_backgroundBlur_432_1239"
+										/>
+										<feColorMatrix
+											in="SourceAlpha"
+											type="matrix"
+											values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+											result="hardAlpha"
+										/>
+										<feOffset dy="4" />
+										<feGaussianBlur stdDeviation="2" />
+										<feComposite in2="hardAlpha" operator="out" />
+										<feColorMatrix
+											type="matrix"
+											values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.26 0"
+										/>
+										<feBlend
+											mode="normal"
+											in2="effect1_backgroundBlur_432_1239"
+											result="effect2_dropShadow_432_1239"
+										/>
+										<feBlend
+											mode="normal"
+											in="SourceGraphic"
+											in2="effect2_dropShadow_432_1239"
+											result="shape"
+										/>
+									</filter>
+								</defs>
+							</svg>
+						</button>
+						<button className="disconnect" onClick={disconnect}>
+							Disconnect
+						</button>
+					</React.Fragment>
+				) : (
+					<button className="mint-btn" onClick={connectWallet}>
+						CONNECT
+						<svg
+							className="frame"
+							width="468"
+							height="83"
+							viewBox="0 0 468 83"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+							preserveAspectRatio="none"
+						>
+							<g filter="url(#filter0_bd_432_1239)">
+								<path
+									className="h-change"
+									d="M5 49.6667V1H417.983L463 25.991V74H50.0171L5 49.6667Z"
+									fill="none"
 								/>
-								<feColorMatrix
-									in="SourceAlpha"
-									type="matrix"
-									values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-									result="hardAlpha"
+								<path
+									d="M5 49.6667V1H417.983L463 25.991V74H50.0171L5 49.6667Z"
+									stroke="#FFB800"
+									stroke-width="2"
 								/>
-								<feOffset dy="4" />
-								<feGaussianBlur stdDeviation="2" />
-								<feComposite in2="hardAlpha" operator="out" />
-								<feColorMatrix
-									type="matrix"
-									values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.26 0"
-								/>
-								<feBlend
-									mode="normal"
-									in2="effect1_backgroundBlur_432_1239"
-									result="effect2_dropShadow_432_1239"
-								/>
-								<feBlend
-									mode="normal"
-									in="SourceGraphic"
-									in2="effect2_dropShadow_432_1239"
-									result="shape"
-								/>
-							</filter>
-						</defs>
-					</svg>
-				</button>
+							</g>
+							<defs>
+								<filter
+									id="filter0_bd_432_1239"
+									x="0"
+									y="-4"
+									width="468"
+									height="87"
+									filterUnits="userSpaceOnUse"
+									colorInterpolationFilters="sRGB"
+								>
+									<feFlood flood-opacity="0" result="BackgroundImageFix" />
+									<feGaussianBlur in="BackgroundImageFix" stdDeviation="2" />
+									<feComposite
+										in2="SourceAlpha"
+										operator="in"
+										result="effect1_backgroundBlur_432_1239"
+									/>
+									<feColorMatrix
+										in="SourceAlpha"
+										type="matrix"
+										values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+										result="hardAlpha"
+									/>
+									<feOffset dy="4" />
+									<feGaussianBlur stdDeviation="2" />
+									<feComposite in2="hardAlpha" operator="out" />
+									<feColorMatrix
+										type="matrix"
+										values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.26 0"
+									/>
+									<feBlend
+										mode="normal"
+										in2="effect1_backgroundBlur_432_1239"
+										result="effect2_dropShadow_432_1239"
+									/>
+									<feBlend
+										mode="normal"
+										in="SourceGraphic"
+										in2="effect2_dropShadow_432_1239"
+										result="shape"
+									/>
+								</filter>
+							</defs>
+						</svg>
+					</button>
+				)}
 			</div>
 		</section>
 	);

@@ -110,6 +110,14 @@
 			}
 		}
 
+		.disconnect {
+			color: #fff;
+			font-size: 18px;
+			margin-top: 10px;
+			display: flex;
+			margin: 0 auto;
+		}
+
 		@media screen and (max-width: 560px) {
 			.mint-info {
 				grid-template-columns: 1fr;

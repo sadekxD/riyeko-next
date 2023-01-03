@@ -83,7 +83,11 @@ const MusicPlayer = () => {
 			></audio>
 			<img src="/images/player-img.png" alt="player" />
 
-			<p className="music-name">{currentSong?.name}</p>
+			<p className="music-name">
+				<marquee behavior="smooth" direction="left">
+					{currentSong?.name}
+				</marquee>
+			</p>
 
 			<div className="player-controls">
 				<div className="prev" onClick={() => skipTrackHandler("skip-back")}>

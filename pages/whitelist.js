@@ -1,20 +1,34 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { ethers } from "ethers";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 const whitelist = () => {
+	const MySwal = withReactContent(Swal);
 	const [formData, setFormData] = useState({
 		discord: "",
 		twitter: "",
 		wallet: "",
 	});
+	const [loading, setLoading] = useState(false);
 
 	const _submit = async (e) => {
 		e.preventDefault();
+		MySwal.fire({
+			html: "Please wait...",
+			timerProgressBar: true,
+			allowOutsideClick: false,
+			customClass: {
+				popup: "custom-swal-popup",
+			},
+			didOpen: () => {
+				Swal.showLoading();
+			},
+		});
 		try {
 			if (ethers.utils.isAddress(formData.wallet)) {
 				const res = await fetch(
-					"https://sheet.best/api/sheets/f867b061-7d5c-4c0d-8a81-d1643a0673fe",
+					`https://sheet.best/api/sheets/${process.env.SHEET_BEST_API_KEY}`,
 					{
 						method: "POST",
 						mode: "cors",
@@ -26,9 +40,30 @@ const whitelist = () => {
 				);
 
 				console.log(res);
+
+				MySwal.fire({
+					html: (
+						<div>
+							<h4>Your Application has been received!</h4>
+							<h2>Welcome to Riyeko City !!</h2>
+						</div>
+					),
+					customClass: {
+						popup: "custom-swal-popup",
+					},
+					showConfirmButton: false,
+				});
+			} else {
+				throw new Error("Parameter is not a number!");
 			}
 		} catch (err) {
 			console.log(err);
+			MySwal.fire({
+				text: "Invalid Data!",
+				customClass: {
+					popup: "custom-swal-popup",
+				},
+			});
 		}
 	};
 

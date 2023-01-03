@@ -27,6 +27,8 @@
     "react-type-animation": "^2.1.2",
     "react-typewriter": "^0.4.1",
     "sass": "^1.55.0",
+    "sweetalert2": "^11.6.16",
+    "sweetalert2-react-content": "^5.0.7",
     "swiper": "^8.4.4",
     "typewriter-effect": "^2.19.0",
     "uuid": "^9.0.0",

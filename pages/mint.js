@@ -3,6 +3,7 @@ import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { Autoplay, EffectCoverflow } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import globalContext from "../context/GlobalContext";
+import Head from "next/head";
 
 const mint = () => {
 	const {
@@ -17,6 +18,9 @@ const mint = () => {
 
 	return (
 		<section id="mint">
+			<Head>
+				<title>Mint</title>
+			</Head>
 			<div className="container">
 				<div className="img-wrapper">
 					<Swiper

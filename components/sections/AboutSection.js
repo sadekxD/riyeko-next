@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion, AnimatePresence } from "framer-motion";
+import Head from "next/head";
 
 const AboutSection = () => {
 	const [activeIndex, setActiveIndex] = useState(0);

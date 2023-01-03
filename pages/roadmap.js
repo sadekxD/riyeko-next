@@ -4,7 +4,9 @@ import RoadmapSection from "../components/sections/RoadmapSection";
 const Roadmap = () => {
 	return (
 		<div>
-			<Head></Head>
+			<Head>
+				<title>Roadmap</title>
+			</Head>
 			<main>
 				<RoadmapSection />
 			</main>

@@ -21,7 +21,11 @@ const Header = () => {
 						<img className="logo" src="/images/logo-main.png" alt="logo-main" />
 					</Link>
 					<div className="social-links">
-						<a href="#" target="_blank" rel="noopener noreferrer">
+						<a
+							href="https://twitter.com/RiyekoNFT"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
 							<svg
 								width="30"
 								height="30"
@@ -37,7 +41,7 @@ const Header = () => {
 								/>
 							</svg>
 						</a>
-						<a href="#" target="_blank" rel="noopener noreferrer">
+						{/* <a href="#" target="_blank" rel="noopener noreferrer">
 							<svg
 								width="30"
 								height="24"
@@ -52,7 +56,7 @@ const Header = () => {
 									stroke-width="2"
 								/>
 							</svg>
-						</a>
+						</a> */}
 					</div>
 				</div>
 				<div className="nav-right">
@@ -200,7 +204,11 @@ const Header = () => {
 				<div className="drawer-content">
 					<div className="drawer-top">
 						<div className="social-links">
-							<a href="#" target="_blank" rel="noopener noreferrer">
+							<a
+								href="https://twitter.com/RiyekoNFT"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
 								<svg
 									width="24"
 									height="24"
@@ -214,7 +222,7 @@ const Header = () => {
 									/>
 								</svg>
 							</a>
-							<a href="#" target="_blank" rel="noopener noreferrer">
+							{/* <a href="#" target="_blank" rel="noopener noreferrer">
 								<svg
 									width="24"
 									height="24"
@@ -227,7 +235,7 @@ const Header = () => {
 										fill="white"
 									/>
 								</svg>
-							</a>
+							</a> */}
 						</div>
 						<button className="drawer-close" onClick={() => setIsOpen(false)}>
 							<svg

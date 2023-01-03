@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { ethers } from "ethers";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import { checkValidDiscordId, checkValidTwitterId } from "../utils/utils";
+import Head from "next/head";
 
 const whitelist = () => {
 	const MySwal = withReactContent(Swal);
@@ -26,7 +28,15 @@ const whitelist = () => {
 			},
 		});
 		try {
-			if (ethers.utils.isAddress(formData.wallet)) {
+			console.log(
+				checkValidTwitterId(formData.twitter),
+				checkValidDiscordId(formData.discord)
+			);
+			if (
+				ethers.utils.isAddress(formData.wallet) &&
+				checkValidDiscordId(formData.discord) &&
+				checkValidTwitterId(formData.twitter)
+			) {
 				const res = await fetch(
 					`https://sheet.best/api/sheets/${process.env.SHEET_BEST_API_KEY}`,
 					{
@@ -73,6 +83,9 @@ const whitelist = () => {
 
 	return (
 		<section id="whitelist">
+			<Head>
+				<title>Whitelist</title>
+			</Head>
 			<form className="container" onSubmit={_submit}>
 				<h1 className="heading">
 					RIY<span className="focus">EKO</span>

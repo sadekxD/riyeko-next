@@ -188,7 +188,7 @@ const RoadmapSection = () => {
 							clickable: true,
 							type: "bullets",
 						}}
-						initialSlide={3}
+						initialSlide={1}
 						autoplay={{ delay: 2000, pauseOnMouseEnter: true }}
 					>
 						{data.map((item, i) => (

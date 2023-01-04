@@ -99,7 +99,7 @@ const mint = () => {
 								<i>SUPPLY</i>
 							</span>
 							<span>
-								<i>{mintInfo.minted} / 5555</i>
+								<i>5555</i>
 							</span>
 						</p>
 						<svg

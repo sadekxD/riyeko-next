@@ -36,7 +36,9 @@ const RoadmapCard = ({ title, image, description }) => {
 				style={{
 					height: !active
 						? "210px"
-						: title === "metaverse" || title === "nft project"
+						: title === "metaverse" ||
+						  title === "nft project" ||
+						  title === "p2e game"
 						? "650px"
 						: "500px",
 				}}

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { Autoplay, EffectCoverflow } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,7 +14,15 @@ const mint = () => {
 		value,
 		connected,
 		mintInfo,
+		web3,
 	} = useContext(globalContext);
+
+	useEffect(() => {
+		if (!web3.cachedProvider) {
+			console.log(web3.cachedProvider);
+			connectWallet();
+		}
+	}, []);
 
 	return (
 		<section id="mint">

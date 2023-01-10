@@ -74,6 +74,7 @@
 					font-family: $thirdFont;
 					transition: all 0.9s;
 					top: -50%;
+					z-index: 1;
 
 					&.dao {
 						display: flex;

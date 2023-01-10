@@ -58,6 +58,7 @@ function MyApp({ Component, pageProps }) {
 	const [wallet, setWallet] = useState("");
 	const [limit, setLimit] = useState(10);
 	const [open, setOpen] = useState(false);
+	const [web3, setWeb3] = useState(web3Modal);
 
 	const connectWallet = useCallback(async () => {
 		try {
@@ -82,11 +83,11 @@ function MyApp({ Component, pageProps }) {
 		}
 	}, []);
 
-	useEffect(() => {
-		if (web3Modal.cachedProvider) {
-			connectWallet();
-		}
-	}, [connectWallet]);
+	// useEffect(() => {
+	// 	if (web3Modal.cachedProvider) {
+	// 		connectWallet();
+	// 	}
+	// }, [connectWallet]);
 
 	useEffect(() => {
 		fetchMintInfo();
@@ -253,6 +254,7 @@ function MyApp({ Component, pageProps }) {
 				value,
 				connected,
 				mintInfo,
+				web3,
 			}}
 		>
 			<React.Fragment>

@@ -20,6 +20,19 @@
 			display: flex;
 			margin: 0 auto;
 			max-width: 150px;
+
+			@keyframes flickerAnimation {
+				0% {
+					opacity: 1;
+				}
+				50% {
+					opacity: 0.4;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			animation: flickerAnimation 0.7s infinite;
 		}
 
 		.form-control {

@@ -28,15 +28,7 @@ const whitelist = () => {
 			},
 		});
 		try {
-			console.log(
-				checkValidTwitterId(formData.twitter),
-				checkValidDiscordId(formData.discord)
-			);
-			if (
-				ethers.utils.isAddress(formData.wallet) &&
-				checkValidDiscordId(formData.discord) &&
-				checkValidTwitterId(formData.twitter)
-			) {
+			if (ethers.utils.isAddress(formData.wallet)) {
 				const res = await fetch(
 					`https://sheet.best/api/sheets/${process.env.SHEET_BEST_API_KEY}`,
 					{

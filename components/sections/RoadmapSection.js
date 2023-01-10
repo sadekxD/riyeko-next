@@ -43,19 +43,19 @@ const data = [
 		description: () => (
 			<React.Fragment>
 				<p>
-					Our Community will be built around NFT enthusiasts, Crypto Investors,
-					Startup Founders, Blockchain Security Researchers, Web 3 Developers,
-					Gamers, and many more!
+					Our community will consist of NFT enthusiasts, crypto investors,
+					startup founders, blockchain security researchers, Web3.0 developers,
+					gamers, and more!
 				</p>
 				<br />
 				<p>
-					Riyeko Community will operate as a platform to connect with
-					like-minded individuals.
+					The Riyeko community will serve as a platform for connecting with
+					others who share similar interests.
 				</p>
 				<br />
 				<p>
 					Players will gain access to our online meetups, private discord
-					channel and receive the latest updates on all of our projects!
+					channel and receive the latest insights on all of our projects!
 				</p>
 			</React.Fragment>
 		),
@@ -66,13 +66,20 @@ const data = [
 			<React.Fragment>
 				<p>
 					We’re building a highly competitive P2E Multiplayer online battle
-					arena (MOBA) game. There will be multiple ARENAS, customizable
-					Characters, and unlimited Private competitions in our game.
+					arena (MOBA) game. with multiple ARENAS, customizable Characters, and
+					unlimited Private competitions in our game!
 				</p>
 				<br />
 				<p>
-					rypto tokens will be earned for every battle won and players have the
-					option to stake their tokens on our platform and earn staking rewards!
+					Players can earn our native tokens for every battle they win! They can
+					also choose to stake these tokens on our platform to earn staking
+					rewards.
+				</p>
+				<br />
+				<p>
+					NFT holders will be eligible for our enhanced rewards program and have
+					access to all features in our games, which will make their gaming
+					experience more competitive and enjoyable
 				</p>
 				<br />
 				<p>
@@ -89,9 +96,8 @@ const data = [
 		description: () => (
 			<React.Fragment>
 				<p>
-					Metaverse is rapidly gaining traction and we strongly believe that
-					businesses from most if not all sectors will adopt it in the near
-					future.
+					The metaverse is gaining widespread attention and we believe that
+					businesses from various industries will quickly adopt it.
 				</p>
 				<br />
 				<p>
@@ -100,18 +106,18 @@ const data = [
 				</p>
 				<br />
 				<p>
-					Riyeko will host meetups in the Metaverse for networking,
+					Riyeko will host meetings in the metaverse for networking,
 					collaboration, and updates on our projects.
 				</p>
 				<br />
 				<p>
-					We will also be releasing a list of projects that we’re building in
-					the Metaverse on our Discord Channel.
+					We will also publish a list of the projects we are building in the
+					metaverse on our Discord channel.
 				</p>
 				<br />
 				<p>
-					What’s more? NFT holders can directly Vote for the projects they would
-					like to contribute to.
+					Additionally, NFT holders can vote for the projects they would like to
+					contribute to.
 				</p>
 				<br />
 				<p>
@@ -120,8 +126,8 @@ const data = [
 				</p>
 				<br />
 				<p>
-					Join our discord channel for more information on how to be a
-					Contributor!
+					For more information on how to become a contributor, join our Discord
+					channel.
 				</p>
 			</React.Fragment>
 		),

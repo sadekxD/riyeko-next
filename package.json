@@ -26,6 +26,7 @@
     "react-toastify": "^9.1.1",
     "react-type-animation": "^2.1.2",
     "react-typewriter": "^0.4.1",
+    "react-typewriter-effect": "^1.1.0",
     "sass": "^1.55.0",
     "sweetalert2": "^11.6.16",
     "sweetalert2-react-content": "^5.0.7",

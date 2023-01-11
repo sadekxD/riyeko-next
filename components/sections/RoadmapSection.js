@@ -66,7 +66,7 @@ const data = [
 			<React.Fragment>
 				<p>
 					We’re building a highly competitive P2E Multiplayer online battle
-					arena (MOBA) game. with multiple ARENAS, customizable Characters, and
+					arena (MOBA) game. With multiple ARENAS, customizable Characters, and
 					unlimited Private competitions in our game!
 				</p>
 				<br />
@@ -163,7 +163,7 @@ const data = [
 		title: "dao",
 		description: () => (
 			<React.Fragment>
-				<p>Comming Soon!</p>
+				<p>Coming Soon!</p>
 			</React.Fragment>
 		),
 	},

@@ -21,9 +21,9 @@ const HeroSection = () => {
         <Link href="/about">
           <button className="hero-cta">ENTER</button>
         </Link>
-        <Link href="/whitelist">
+        {/* <Link href="/whitelist">
           <button className="wl-btn">PLAYER LIST(WL)</button>
-        </Link>
+        </Link> */}
       </div>
     </section>
   );

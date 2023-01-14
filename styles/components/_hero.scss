@@ -1,67 +1,77 @@
 #hero {
-	// background: url(/images/hero-bg.png) no-repeat;
-	// background-size: cover;
-	// background-position: center;
-	min-height: 600px;
-	height: 100vh;
-	position: relative;
+  // background: url(/images/hero-bg.png) no-repeat;
+  // background-size: cover;
+  // background-position: center;
+  min-height: 600px;
+  height: 100vh;
+  position: relative;
 
-	video {
-		position: fixed;
-		right: 0;
-		bottom: 0;
-		min-width: 100%;
-		min-height: 100%;
-		object-fit: cover;
-		object-position: left;
-		z-index: -1;
-	}
+  video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: left;
+    z-index: -1;
+  }
 
-	.container {
-		.header {
-			padding: 20px;
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
+  @media screen and (max-width: 768px) {
+    video {
+      display: none;
+    }
 
-			.logo {
-				max-width: 100px;
-				width: 100%;
-			}
-		}
-	}
+    background: url("/images/hero-bg-mobile.png");
+    object-position: left;
+  }
 
-	.hero-cta {
-		position: absolute;
-		bottom: 140px;
-		left: 50%;
-		transform: translateX(-50%);
-		background-color: $accent2;
-		font-weight: 400;
-		font-size: 36px;
-		color: $white;
-		width: 148px;
-		height: 60px;
-		border-radius: 5px;
-	}
+  .container {
+    .header {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-	.wl-btn {
-		position: absolute;
-		bottom: 60px;
-		left: 50%;
-		transform: translateX(-50%);
-		background-color: #ffc000;
-		font-weight: 400;
-		font-size: 36px;
-		color: $white;
-		height: 60px;
-		padding: 0 20px;
-		border-radius: 5px;
-	}
+      .logo {
+        max-width: 100px;
+        width: 100%;
+      }
+    }
+  }
 
-	@media screen and (max-width: 500px) {
-		.hero-cta, .wl-btn {
-			font-size: 28px;
-		}
-	}
+  .hero-cta {
+    position: absolute;
+    bottom: 140px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $accent2;
+    font-weight: 400;
+    font-size: 36px;
+    color: $white;
+    width: 148px;
+    height: 60px;
+    border-radius: 5px;
+  }
+
+  .wl-btn {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffc000;
+    font-weight: 400;
+    font-size: 36px;
+    color: $white;
+    height: 60px;
+    padding: 0 20px;
+    border-radius: 5px;
+  }
+
+  @media screen and (max-width: 500px) {
+    .hero-cta,
+    .wl-btn {
+      font-size: 28px;
+    }
+  }
 }

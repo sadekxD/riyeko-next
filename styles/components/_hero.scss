@@ -18,10 +18,12 @@
   // }
 
   background: url("/images/riyeko.png");
+  background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
 
   @media screen and (max-width: 768px) {
-    object-position: left;
+    background-position: left;
   }
 
   .container {

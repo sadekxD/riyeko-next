@@ -3,14 +3,9 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <section id="hero">
-      <video
-        src="/videos/bg-video.mp4"
-        autoPlay
-        muted
-        loop
-        controls={false}
-      ></video>
+    <section
+      id="hero"
+    >
       <div className="container">
         <div className="header">
           <Link href="/">

@@ -6,23 +6,20 @@
   height: 100vh;
   position: relative;
 
-  video {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
-    object-position: left;
-    z-index: -1;
-  }
+  // video {
+  //   position: fixed;
+  //   right: 0;
+  //   bottom: 0;
+  //   min-width: 100%;
+  //   min-height: 100%;
+  //   object-fit: cover;
+  //   object-position: left;
+  //   z-index: -1;
+  // }
+
+  background: url("/images/riyeko.png");
 
   @media screen and (max-width: 768px) {
-    video {
-      display: none;
-    }
-
-    background: url("/images/hero-bg-mobile.png");
     object-position: left;
   }
 

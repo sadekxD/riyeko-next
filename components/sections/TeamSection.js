@@ -27,7 +27,7 @@ const TeamSection = () => {
 						<SwiperSlide key={i}>
 							<img
 								className="team-img"
-								src={`/images/team-${item}.png`}
+								src={`/images/teams-${item}.png`}
 								alt="product"
 							/>
 						</SwiperSlide>

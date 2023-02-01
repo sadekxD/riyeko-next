@@ -68,8 +68,13 @@ const MusicPlayer = () => {
 
 	const songEndHandler = async () => {
 		let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
-		await setCurrentSong(songs[(currentIndex + 1) % songs.length]);
-		if (isPlaying) audioRef.current.play();
+		setCurrentSong(songs[(currentIndex + 1) % songs.length]);
+
+		setTimeout(() => {
+			if (isPlaying) audioRef.current.play();
+		}, 1000);
+		console.log(audioRef);
+		// skipTrackHandler("skip-forward");
 	};
 
 	return (

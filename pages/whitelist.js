@@ -86,7 +86,7 @@ const whitelist = () => {
 				<h1 className="heading">
 					RIY<span className="focus">EKO</span>
 				</h1>
-				<img src="/images/whitelist.gif" alt="whitelist" />
+				<img style={{borderRadius: 8}} src="/images/whitelist.gif" alt="whitelist" />
 				<div className="form-control">
 					<div className="input-label">
 						<svg

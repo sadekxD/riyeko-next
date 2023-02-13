@@ -41,8 +41,6 @@ const whitelist = () => {
 					}
 				);
 
-				console.log(res);
-
 				MySwal.fire({
 					html: (
 						<div>
@@ -54,6 +52,12 @@ const whitelist = () => {
 						popup: "custom-swal-popup",
 					},
 					showConfirmButton: false,
+				});
+
+				setFormData({
+					discord: "",
+					twitter: "",
+					wallet: "",
 				});
 			} else {
 				throw new Error("Parameter is not a number!");
@@ -82,7 +86,7 @@ const whitelist = () => {
 				<h1 className="heading">
 					RIY<span className="focus">EKO</span>
 				</h1>
-				<img src="/images/whitelist-img.png" alt="whitelist" />
+				<img src="/images/whitelist.gif" alt="whitelist" />
 				<div className="form-control">
 					<div className="input-label">
 						<svg
@@ -121,6 +125,7 @@ const whitelist = () => {
 							required
 							type="text"
 							name="discord"
+							value={formData.discord}
 							onChange={_change}
 							placeholder="ENTER DISCORD ID"
 						/>
@@ -169,6 +174,7 @@ const whitelist = () => {
 							required
 							type="text"
 							name="twitter"
+							value={formData.twitter}
 							onChange={_change}
 							placeholder="ENTER TWITTER ID"
 						/>
@@ -225,6 +231,7 @@ const whitelist = () => {
 							required
 							type="text"
 							name="wallet"
+							value={formData.wallet}
 							onChange={_change}
 							placeholder="ENTER WALLET ADDRESS"
 						/>

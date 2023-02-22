@@ -227,7 +227,8 @@ function MyApp({ Component, pageProps }) {
 				});
 				await res.wait();
 			} else {
-				toast.error("Minting hasn't started yet!", {
+				toast.update(id, {
+					render: "Minting hasn't started yet!",
 					position: "bottom-center",
 					autoClose: 5000,
 					hideProgressBar: false,
@@ -236,7 +237,9 @@ function MyApp({ Component, pageProps }) {
 					draggable: true,
 					progress: undefined,
 					theme: "light",
-					icon: false,
+					type: "info",
+					icon: true,
+					isLoading: false,
 				});
 				return;
 			}

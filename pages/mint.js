@@ -80,7 +80,9 @@ const mint = () => {
 								<i>
 									{mintInfo.preSale
 										? mintInfo.presaleCost
-										: mintInfo.publicCost}{" "}
+										: mintInfo.publicSale
+										? mintInfo.publicCost
+										: ""}{" "}
 									ETH
 								</i>
 							</span>

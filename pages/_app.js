@@ -15,6 +15,9 @@ import WalletConnect from "@walletconnect/web3-provider";
 import CoinbaseWalletSDK from "@coinbase/wallet-sdk";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import whitelist from "../wallets/wallets.json";
+import keccak256 from "keccak256";
+import { MerkleTree } from "merkletreejs";
 
 const INFURA_KEY = process.env.INFURA_API_KEY;
 
@@ -45,7 +48,7 @@ if (typeof window !== "undefined") {
 
 function MyApp({ Component, pageProps }) {
 	const commonHeader = Component.commonHeader;
-	const CONTRACT_ADDRESS = "0x252F89d6BD29B29eD89dae95DA64870011d16b6C";
+	const CONTRACT_ADDRESS = process.env.CONTRACT_ADDRESS;
 	const [connected, setConnected] = useState(false);
 	const [mintInfo, fetchMintInfo] = useContractStore((state) => [
 		state.mintInfo,
@@ -121,7 +124,7 @@ function MyApp({ Component, pageProps }) {
 		const network = await provider.getNetwork();
 		const chainId = network.chainId;
 
-		if (chainId === 5) {
+		if (chainId === 1) {
 			setConnected(true);
 			setWallet(accounts[0]);
 			toast.success("Wallect connected!", {
@@ -151,6 +154,15 @@ function MyApp({ Component, pageProps }) {
 		}
 	};
 
+	const getProof = (list, wallet) => {
+		const whitelistedNodes = list.map((addr) => keccak256(addr));
+		const whitelistedMerkleTree = new MerkleTree(whitelistedNodes, keccak256, {
+			sortPairs: true,
+		});
+
+		return whitelistedMerkleTree.getHexProof(keccak256(wallet));
+	};
+
 	const mint = async () => {
 		const id = toast("minting...", {
 			position: "bottom-center",
@@ -165,31 +177,69 @@ function MyApp({ Component, pageProps }) {
 				signer
 			);
 
-			// if (open) {
-			// 	MySwal.fire({
-			// 		icon: "error",
-			// 		text: "Minting hasn't started yet!",
-			// 	});
-			// 	return;
-			// }
+			let price;
+			const preSale = await contract.preSale();
+			const publicSale = await contract.publicSale();
+			const proof = getProof(whitelist, wallet);
 
-			// MySwal.fire({
-			// 	title: "Minting",
-			// 	html: "Please wait...",
-			// 	timerProgressBar: true,
-			// 	allowOutsideClick: false,
-			// 	customClass: {
-			// 		loader: "swal2-custom-loader",
-			// 	},
-			// 	didOpen: () => {
-			// 		Swal.showLoading();
-			// 	},
-			// });
+			let res;
 
-			const price = await contract.publicCost();
-			const res = await contract.mint(value, {
-				value: price.mul(value),
-			});
+			if (preSale) {
+				if (proof.length <= 0) {
+					// toast.error("You are not in the whitelist!", {
+					// 	position: "bottom-center",
+					// 	autoClose: 5000,
+					// 	hideProgressBar: false,
+					// 	closeOnClick: true,
+					// 	pauseOnHover: true,
+					// 	draggable: true,
+					// 	progress: undefined,
+					// 	theme: "light",
+					// 	icon: false,
+					// });
+					toast.update(id, {
+						render: "You are not in the whitelist!",
+						position: "bottom-center",
+						autoClose: 5000,
+						hideProgressBar: false,
+						closeOnClick: true,
+						pauseOnHover: true,
+						draggable: true,
+						progress: undefined,
+						theme: "light",
+						type: "info",
+						icon: true,
+						isLoading: false,
+					});
+					// toast.update(id, { isLoading: false, autoClose: 10 });
+					return;
+				}
+				price = await contract.presaleCost();
+				res = await contract.allowlistMint(value, proof, {
+					value: price.mul(value),
+				});
+
+				await res.wait();
+			} else if (publicSale) {
+				price = await contract.publicCost();
+				res = await contract.mint(value, {
+					value: price.mul(value),
+				});
+				await res.wait();
+			} else {
+				toast.error("Minting hasn't started yet!", {
+					position: "bottom-center",
+					autoClose: 5000,
+					hideProgressBar: false,
+					closeOnClick: true,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined,
+					theme: "light",
+					icon: false,
+				});
+				return;
+			}
 
 			await res.wait();
 
